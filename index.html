@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Nicolas R"/>
+
+
+    <link rel="stylesheet" href="assets/css/mainLog.css">
+
+    <!-- pour mettre tous les navigaterus au meme style     tp01 css-->
+    <link rel="stylesheet" href="assets/css/norm.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Germania+One&family=Imbue&family=Italianno&display=swap" rel="stylesheet">  
+
+    <title>Page de connexion i-BOOxS</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="assets/img/_new_ibooks1.PNG" alt="logo du site représentant un hibou">
+        <h1 class="font-h1"><em class="letter-color">L</em>ogin portal</h1>
+        <img class="logo" id="read" src="assets/img/lire_livre-removebg-preview.png" alt="bonhomme qui lit un livre">
+        
+    </header>
+
+    <!-- Background Image -->
+    <img id="bg-body" src="assets/img/1472852001.jpg" alt="image de fond représentant un livre ouvert avec un hibou par dessus">
+    
+    <main>
+        <div class="container">
+            <!-- zone de connexion -->
+            
+            <form class="form" action="" method="POST">
+                <h1 class="testH1"><em class="letter-color">C</em>onnexion</h1>
+                
+                <label for="inputMail">Entrez votre adresse mail*</label>
+                <input type="mail" placeholder="ex : Lor.Wils@ootlicck.comm" name="inputMail"  required>
+    
+                <label for="inputPWD">Entrez votre mot de passe*</label>
+                <input type="password" placeholder="ex : ***********" name="inputPWD" required>
+                
+                <div class="btn">
+                    <input type="reset" value="ANNULER"/>
+                    <input type="submit" id='submit' value='VALIDER'/>
+                </div>
+            </form>
+            <!-- <a href="/commentaire.html">link com</a> -->
+            <span><em class="letter-color">M</em>ot de passe oublié ? <a href="mpOublie.html">Cliquez ici</a></span>
+            
+            <span id="centerForm"><em class="letter-color">P</em>as encore inscrit ? <a href="inscription.html">Cliquez ici</a> pour vite vous inscrire !</span>
+        </div>
+
+        <!-- <div id="log">  article 
+            <div class="hero">  section 
+                 Container center 60% 
+                <div class="hero-content">
+                    <div class="hero-content-text">
+                         formulaire 
+                        <form action="/my-handling-form-page" method="POST">
+                             Champ nickname 
+                            <label for="input_nickName">Enter your nickname*</label><br>
+                            <input type="text" id="input_nickName" name="nickName" required placeholder="e.g. : fanatiX267"/>
+                            <br>
+                            < Champ password 
+                            <label for="input_PWD">Enter your nickname*</label><br>
+                            <input type="password" id="input_PWD" name="pwd" required placeholder="e.g. : ********"/>
+                            <br>
+                            <input type="submit" value="log in"/>
+                        </form>
+                        <span>Forgotten your password ?</span>
+
+                        <a href="/mpOublie.html">link</a>
+                    </div> 
+
+
+
+    
+                    <div class="hero-content-text">
+                        <h4>Why you should join us ?</h4>
+                        
+                        <span>"Concept de l'appli en deux mots"</span>
+                            <p>
+                                -accessible 24h/24 et 7 jours sur 7<br>
+                                -fonctionnant grâce aux membres<br>
+                                Inspirée du modèle bien connu des<br>
+                                « Boîtes d’échange entre voisins »,<br>
+                                le concept de la « Boite à livres »<br>
+                                reprend, le même credo :<br>
+                                « Une boite à livres est un lieu<br>
+                                d’échange de livres sans contrepartie ». 
+                            </p>
+                    </div>
+                </div>
+
+
+                
+            </div>  /section 
+        </div>  /article -->
+    </main>
+
+
+
+</body>
+</html>

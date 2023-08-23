@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Nicolas R" />
+
+
+    <link rel="stylesheet" href="assets/css/mainLog.css">
+    <script type="text/javascript" src="assets/js/file.js" defer></script>
+
+    <!-- pour mettre tous les navigaterus au meme style     tp01 css-->
+    <link rel="stylesheet" href="assets/css/norm.css">
+
+    <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Germania+One&family=Imbue&family=Italianno&display=swap"
+        rel="stylesheet">
+
+    <title>Page d'inscription i-BOOxS</title>
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="assets/img/_new_ibooks1.PNG" alt="logo du site représentant un hibou">
+        <h1 class="font-h1"><em class="letter-color">I</em>nscription</h1>
+        <img class="logo" id="read" src="assets/img/lire_livre-removebg-preview.png" alt="bonhomme qui lit un livre">
+
+    </header>
+
+    <!-- Background Image -->
+    <img id="bg-body" src="assets/img/1472852001.jpg"
+        alt="image de fond représentant un livre ouvert avec un hibou par dessus">
+
+    <main>
+        
+            <!-- zone de connexion -->
+
+            <form class="grid-container" action="" method="POST" id="verifJS" onclick="check()">
+
+                <div class="formulaire">
+
+                    <div class="info">
+                        <label for="inputNom">Entrer votre nom*</label>
+                        <input type="text" placeholder="ex : Loremz" name="inputNom" id="inputNom" required>
+
+                        <label for="inputPrenom">Entrer votre Prénom*</label>
+                        <input type="text" placeholder="ex : Wilsoon" name="inputPrenom" id="inputPrenom" required>
+
+                        <label for="inputAge">Entrer votre Age*</label>
+                        <input type="number" placeholder="ex : 27" name="inputAge" id="inputAge" onkeyup="checkAge()" required>
+                        <span id="checkLegal"></span>
+                    </div>
+
+                    <div class="info">
+                        <label for="inputCodeP">Entrer votre code postal*</label>
+                        <input type="text" placeholder="ex : 75002" name="inputCodeP" id="inputCodeP" required>
+
+                        <label for="inputVille">Entrer votre Ville*</label>
+                        <input type="text" placeholder="ex : Paris" name="inputVille" id="inputVille" required>
+
+                        <label for="inputMail">Entrer votre adresse mail*</label>
+                        <input type="mail" autocomplete="email" placeholder="ex : Lor.Wils@ootlicck.comm" name="inputMail" id="inputMail" required>
+                        
+                    </div>
+
+                    <div class="info">
+                        <label for="inputPseudo">Entrer votre Pseudo*</label>
+                        <input type="text" placeholder="ex : Wils12" name="inputPseudo" id="pseudo" required>
+
+                        <label for="inputPWD">Entrer votre mot de passe*</label>
+                        <input type="password" placeholder="ex : **********" name="inputPWD" id="inputPWD" value="" required>
+
+                        <label for="inputPWD_valid">Entrez-le une seconde fois*</label>
+                        <input type="password" placeholder="ex : **********" name="inputPWD_valid" id="inputPWD_valid" value="" required>
+                    
+                        <span id="checkValue"></span>
+                    </div>
+                </div>
+
+                <div class="btn col">
+                    <input type="reset" value="ANNULER" />
+                    <input type="submit" id='submit' value='VALIDER' onclick="verificationFormulaire()" />
+                </div>
+
+            </form>
+    </main>
+</body>
+
+</html>

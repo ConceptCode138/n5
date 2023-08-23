@@ -1,0 +1,56 @@
+:root{
+    /* changement de la méthode de calcul des boites */
+    box-sizing: border-box;
+    /* prise en compte de 100% de la taille de la police utilisateur */
+    font-size: 100%;
+    /*
+    16px par defaut sur les naviguateur
+    1rem -> 16px
+    2rem -> 32px
+    ...
+    */
+
+    /*font-family: ;   
+    font-family: 'Cormorant Upright', serif;
+
+    font-family: 'Germania One', cursive;
+
+    font-family: 'Imbue', serif;
+
+    font-family: 'Italianno', cursive;
+
+    */
+    /*
+    --bgColor: #000;
+    --txtLetterColor:#ff0000;
+    --txtColorDefault:#ffffff;
+    --txtColor1:#000;
+
+    color: var(--txtColorDefault);
+    /* Déclaration variables style txt 
+    --titleFont: 'Italianno', cursive;*/
+    
+}
+
+/* Sélectionne tous les éléments + pseudo éléments before et after */
+*,*::before, *::after{
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0px;                                /* ou juste 0 */
+    position: relative;                         /* relative permet de faire accrocher tout element au premier parent RELATIVE quand l'enfant est absolute*/
+    font-family: Arial, Helvetica, sans-serif;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* min-height: 100vh; */
+    align-items: stretch;
+}
+
+
+/* HEADER */
+
+

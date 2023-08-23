@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Nicolas R" />
+
+
+    <link rel="stylesheet" href="assets/css/mainLog.css">
+    
+    <!-- pour mettre tous les navigaterus au meme style     tp01 css-->
+    <link rel="stylesheet" href="assets/css/norm.css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Germania+One&family=Imbue&family=Italianno&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css">
+    <script type="text/javascript" src="assets/js/file.js" defer></script>
+    <title>Page accueil i-BOOxS</title>
+</head>
+
+<body>
+    <header class="header fix">
+        <img class="logo" src="assets/img/_new_ibooks1.PNG" alt="logo du site représentant un hibou">
+        <h1 class="font-h1"><em class="letter-color">H</em>ome</h1>
+        <!-- <img class="logo" id="read" src="/assets/img/lire_livre-removebg-preview.png" alt="bonhomme qui lit un livre"> -->
+        <nav id="nav-screen">
+            <ul>
+                <li><a href="creationFiche.html">Ajouter livre</a></li>
+                <li><a href="#link-search">Rechercher</a></li> <!-- penser a mettre un id link-search à la barre de recherche plus bas-->
+                <li><a href="#">Compte</a></li>
+                <li><a href="index.html"><i class="fas fa-sign-out-alt"></i></a></li>
+            </ul>
+        </nav>
+        <!--  Navigation Menu Responsive-->
+        <div class="topnav" id="nav-mobile">
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+                <a href="creationFiche.html">Ajouter livre</a>
+                <a href="#link-search">Rechercher</a>
+                <a href="#">Compte</a>
+                <a href="index.html">Déconnexion</a>
+            </div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="menuResponsive()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+
+
+    </header>
+    <main>
+        <img id="bg-accueil" src="assets/img/biblio_capt.PNG" alt="fond écran représentant une grande bibliotèque">
+
+        <div id="super-div">
+            <h1 class="double-bar font-h1"><em class="letter-color">T</em>op 3 des livres qui tournent le plus</h1>
+
+            <div class="container-img-child">
+                <div class="child">
+                    <img src="assets/img/harry_potter_et_la_chambre_des_secrets.jpg" alt="top livre numéro un" height="150px">
+                </div>
+                <div class="child">
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="top livre numéro deux" height="150px">
+                </div>
+                <div class="child">
+                    <img src="assets/img/Le-secret-de-la-cathedrale.png" alt="top livre numéro trois" height="150px"> 
+                </div>
+            </div>
+
+            <h1 class="double-bar font-h1"><em class="letter-color">N</em>ouveau</h1>
+
+            <div class="container-img-child">
+                <div class="child">
+                    <img src="assets/img/harry_potter_et_la_chambre_des_secrets.jpg" alt="top livre numéro un" height="150px">
+                </div>
+                <div class="child">
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="top livre numéro deux" height="150px">
+                </div>
+                <div class="child">
+                    <img src="assets/img/Le-secret-de-la-cathedrale.png" alt="top livre numéro trois" height="150px"> 
+                </div> 
+            </div>
+
+            <h1 class="double-bar font-h1"><em class="letter-color">R</em>echerche avancée</h1>
+
+            <div class="filter-book">
+                
+                <form action="" method="GET" id="line-form">
+                    <label for="GENRE" aria-label="genre"></label>
+                    <select name="GENRE" >
+                        <option value="" selected hidden>GENRE</option>
+                        <option value="historique">historique</option>
+                        <option value="fiction">fiction</option>
+                        <option value="romantique">romantique</option>
+                        <option value="jeunesse">jeunesse</option>
+                        <option value="fantastique">fantastique</option>
+                        <option value="horreur">horreur</option>
+                        <option value="policier & thriller">policier & thriller</option>
+                    </select>
+
+                    <label for="TITRE" aria-label="titre"></label>
+                    <select name="TITRE" >
+                        <option value="" selected hidden>TITRE</option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                        <option value="g">g</option>
+                    </select>
+
+                    <label for="CP" aria-label="code postal"></label>
+                    <select name="CP" >
+                        <option value="" selected hidden>CODE POSTAL</option>
+                        <option value="12110">12110</option>
+                        <option value="01130">01130</option>
+                        <option value="15600">15600</option>
+                        <option value="15000">15000</option>
+                        <option value="12400">12400</option>
+                        <option value="08370">08370</option>
+                        <option value="12100">12100</option>
+                    </select>
+
+                    
+                    <input class="submit-acc" type="submit" id='submit' value='APPLIQUER' />
+                    
+
+                </form>
+            </div>
+
+            <h1 class="double-bar font-h1"><em class="letter-color">C</em>onsulter la liste de livre disponible</h1>
+
+            <div class="grid-books">
+                <h4 class="title4"><em class="letter-color">L</em>ivre disponible :</h4>
+
+                <div class="book">
+                    <img class="img-grid" src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+                <div class="book">
+                    <img src="/assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+                <div class="book">  
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+                <div class="book">
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+                <div class="book">
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+                <div class="book">
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+                <div class="book">
+                    <img src="assets/img//alfred_hitchcock__histoire_a_faire_peur.jpg" alt="livre disponible de la bdd">
+                    <div class="list-style">
+                        <ul>
+                            <li>TITRE : xxxxxxxxxxxxxxxxxxx</li>
+                            <li>ISBN : xxxxxxxxxxxxxxxxxxxx</li>
+                            <li>POSITION : xxxxxxxxxxxxxxxx</li>
+                        </ul>
+                    </div>
+                    <a href="detailsLivre.html"><img class="display-link" src="assets/img/eye.png" alt="oeil lien"></a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="foot">
+        <div>
+            <span>&copy;opyright <em class="letter-color">i</em>-BOOxS <em class="letter-color" id="yearDate"></em></span>
+        </div>
+
+        <span>Contact us : 
+            <a href="mailto:nicolas.rivemale@2isa.org" title="[ Cliquez ce lien pour nous contacter par mail ]"><i class="fas fa-envelope-open-text"></i></a>
+        </span>
+
+        <div>
+            <span>Follow us on :</span>
+            <a href="https://fr-fr.facebook.com/login" target="_blank" title="[ lien vers FACEBOOK ]"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://twitter.com/login?lang=fr" target="_blank" title="[ lien vers TWITTER ]"><i class="fab fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com/?hl=fr" target="_blank" title="[ lien vers INSTAGRAM ]"><i class="fab fa-instagram-square"></i></a>
+        </div>
+        
+    </footer>
+
+    
+
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Nicolas R" />
+
+
+    <link rel="stylesheet" href="assets/css/mainLog.css">
+    <script type="text/javascript" src="assets/js/file.js" defer></script>
+
+    <!-- pour mettre tous les navigaterus au meme style     tp01 css-->
+    <link rel="stylesheet" href="assets/css/norm.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;700&family=Germania+One&family=Imbue&family=Italianno&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendors/font-awesome/css/all.min.css">
+
+    <title>Page d'inscription i-BOOxS</title>
+</head>
+
+<body id="filter-dark">
+    <header>
+        <img class="logo" src="assets/img/_new_ibooks1.PNG" alt="logo du site représentant un hibou">
+        <h1 class="font-h1"><em class="letter-color">C</em>reate card</h1>
+        
+        
+        
+        <img class="logo" id="read" src="assets/img/lire_livre-removebg-preview.png" alt="bonhomme qui lit un livre">
+    </header>
+
+    <!-- Background Image -->
+    <img id="bg-body-CF" src="assets/img/vieux-livre-vue-dessus-fond-planche-bois_30478-2780.webp"
+        alt="image de fond représentant un livre ouvert avec un hibou par dessus">
+
+    <main>
+            <!-- zone de connexion -->
+
+            <form class="grid-container" action="" method="POST" enctype="multipart/form-data" id="verifJS">
+
+                <div class="formulaire">
+
+                    <div class="info">
+                        
+
+                        <label for="isbn" title="ISBN : est un code que l'on trouve en dessous des code barres des livres en quatrième couverture">
+                            Entrez l'ISBN: <i class="fas fa-question-circle"></i></label>
+                            <input type="text" placeholder="ex : 2010015819" name="ISBN" id="isbn" maxlength="13" required>
+                        
+
+                        <label for="titre" title="Tapez le titre du livre, revue, ...">
+                            Entrez le titre: <i class="fas fa-question-circle"></i></label>
+                            <input type="text" placeholder="ex : Le secret de la cathédrale" name="TITRE" id="titre" required>
+                        
+
+                        <label for="nbPage" title="Indiquez le nombre de pages composant cet ouvrage">
+                            Entrez le nombre de page: <i class="fas fa-question-circle"></i></label>
+                            <input type="number" placeholder="ex : 260" name="NBPAGE" id="nbPage" required>
+                        
+
+                        <label for="anneeEd" title="Indiquez l'année de parution de livre, revue,...">
+                            Entrez l'année de parution: <i class="fas fa-question-circle"></i></label>
+                            <input type="datetime" placeholder="ex : 2014" name="ANNEE_EDITION" id="anneeEd" maxlength="4" required>
+                        
+
+                        <label for="editeur" title="Indiquez le nom de maison d'édition qui a publié le livre, revue,...">
+                            Entrez un éditeur: <i class="fas fa-question-circle"></i></label>
+                            <input type="text" placeholder="ex : Le Livre de Poche" name="EDITEUR" id="editeur" maxlength="50" required>
+                            <span><em class="letter-color">P</em>oursuivons sur la deuxième page de collecte d'informations</span>
+                        
+                    </div>
+
+                    <div class="info">
+                        <label for="auteur" title="Indiquez le nom de l'auteur qui a écrit le livre, revue,...">
+                            Entrez un auteur: <i class="fas fa-question-circle"></i> <i class="fas fa-user-plus"></i></label>
+                            <input type="text" placeholder="ex : Béatrice Nicodème" name="AUTEUR" id="auteur" maxlength="50" required>
+                        
+
+                        <label for="imgCouv" title="télécharger une image ou une photo de la couverture du livre, revue,...">
+                            téléverser une image: <i class="fas fa-question-circle"></i> <i id="iconImport" class="fas fa-file-import"></i></label>
+                            <input type="file" name="COUVERTURE" id="imgCouv" required>
+                        
+
+                        <label for="resume" title="Tapez le résumé du livre, revue,...">
+                            Entrez un résumé: <i class="fas fa-question-circle"></i></label>
+                            <input type="text" placeholder="ex : Sur un chantier de construction..." name="RESUME" id="resume" maxlength="500" required>
+                        <!-- <textarea name=""  maxlength="" id="" cols="30" rows="10"></textarea>  penser a textarea dans css resize :none;-->
+
+                        <label for="genre" title="Indiquez le genre du livre, revue,...">
+                            Entrez un genre: <i class="fas fa-question-circle"></i></label>
+                            <input type="text" placeholder="ex : Jeunesse" name="GENRE" id="genre" required>
+                        
+
+                        <label for="etat" title="Indiquez le nom de l'auteur qui a écrit le livre, revue,...">
+                            Entrez l'état du livre: <i class="fas fa-question-circle"></i></label>
+                            <select name="ETAT" id="etat" required>
+                                <option value="" selected hidden>-- ex : 4 --</option>
+                                <option value="1">1 -&gt; ( passable )</option>
+                                <option value="2">2 -&gt; ( moyen )</option>
+                                <option value="3">3 -&gt; ( bon état )</option>
+                                <option value="4">4 -&gt; ( très bon état )</option>
+                                <option value="5">5 -&gt; ( comme neuf )</option>
+                            </select>
+                        <span><em class="letter-color">A</em>vant de valider, assurez-vous de l'exactitude des informations </span>
+         
+                    </div>
+                </div>
+
+                <div class="btn col">
+                    <input type="reset" value="ANNULER" />
+                    <input type="submit" id='submit' value='VALIDER' onclick="verificationFormulaire()"/>
+                </div>
+
+            </form>
+    </main>
+</body>
+
+</html>

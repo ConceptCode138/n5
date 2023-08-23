@@ -1,0 +1,922 @@
+:root{
+    /* changement de la méthode de calcul des boites */
+    box-sizing: border-box;
+    /* prise en compte de 100% de la taille de la police utilisateur */
+    font-size: 100%;
+    /*
+    16px par defaut sur les naviguateur
+    1rem -> 16px
+    2rem -> 32px
+    ...*/
+}
+
+/* Sélectionne tous les éléments + pseudo éléments before et after */
+*,*::before, *::after{
+    /* Forcer l'héritage de la propriété box-sizing */
+    box-sizing: inherit;
+}
+
+
+
+body{
+    background-color: #000;
+    margin: 0;
+    /* Déclaration variables style txt */
+    --titleFont: 'Italianno', cursive;
+
+    /* Déclaration de variables de coloration de textes */
+    --colorH1:rgba(255, 255, 255, 0.8);
+    --LetterColor:#ff0505;
+
+    --colorTXTFormulaire:rgba(255, 255, 255, 0.8);
+    --colorTXT:rgba(255, 255, 255, 0.8);
+
+    --btnVALIDColor:rgba(255, 0, 0, 0.583);
+
+    --bgColorOne_w:rgba(255, 255, 255, 0.522);
+    
+}
+/* #region CONTENU BG BODY */
+body > img {
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit:inherit;
+    
+}
+#bg-accueil{
+    position: fixed;                                              /* pour fixer le header à l'écran */
+    top: 0px;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#super-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center; /* vertical */
+    margin-top: 8%;
+    margin-bottom: 10%;
+    
+    
+}
+#super-div::before{
+    z-index: -1;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.392);
+}
+
+.filter-book{
+    background-color: rgba(119, 110, 110, 0.707);
+    border-radius: 5px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.grid-books{
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr;                   */
+    width: 60%;
+    max-width: 1024px;
+    /* height: 100%; */
+    row-gap: 4%;
+    column-gap: 4%;
+    
+    padding: 0 1%;
+    margin-bottom: 5rem;
+
+}
+/* #endregion CONTENU BG BODY */
+
+form#line-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 3% 2%;
+    width: 80%;
+}
+form#line-form select{
+    display: flex;
+    flex-direction: row;
+    margin: 0 1%;
+}
+ 
+
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    margin:  auto;
+    margin-top: 7%;            /* pour responsive ajouter un peu de marge*/
+}
+
+
+
+/* #region TXT LIEN */
+.container h1{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 10%;
+    font-family: 'Cormorant Upright', serif;
+}
+form h1, form label{
+    color : var(--colorTXTFormulaire);
+}
+.font-h1{
+    font-family: var(--titleFont);
+    font-size: 6rem;
+    font-weight: lighter;
+    color: var(--colorH1);
+}
+.double-bar.font-h1{
+    font-size: 3rem;
+    color: var(--colorH1);
+}
+
+h1 .letter-color{
+    color: var(--LetterColor);
+}
+.letter-color{
+    color: var(--LetterColor);
+}
+
+.double-bar::before,.double-bar::after{
+    content: "";
+    display: block;
+    width: 25%;
+    border: 2px solid var(--LetterColor);
+    margin: 8px auto;
+}
+em{
+    font-style: normal;
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+.resume{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    text-align: justify;
+    text-indent: 2rem;
+    border: 2px solid red;
+    border-radius: 5px;
+    color:var(--colorTXT);
+    background-color: rgba(79, 76, 76, 0.624);
+    background-position: center center;
+    background-image: url(/assets/img/_new_ibooks.PNG);
+    padding: 1%;
+    margin: 1% 0 ;
+}
+.title4{
+    grid-column: 1 / span 3;
+    padding-left: 2%;
+    font-size: 2.5rem;
+    color:var(--colorTXT);
+    font-family: var(--titleFont);
+    font-weight: lighter;
+    margin-bottom: 0;
+    background-color: rgba(119, 116, 116, 0.624);
+    border-radius: 15px;
+}
+
+/* #endregion TXT LIEN */
+
+input[type = mail],
+input[type = password],
+input[type = text],
+input[type = number],
+input[type = datetime],
+select{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+    background-color: rgba(255, 0, 0, 0.301);
+    border-radius: 5px;
+}
+/* #region BOUTON */
+
+/* permet d'attrapper tous lesinput de type submit */
+input[type = submit],[type = reset] {
+    background-color: var(--btnVALIDColor);
+    color: var(--colorTXTFormulaire);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40%;
+    
+}
+
+input[type=submit]:hover,
+     [type = reset]:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: red;
+    border: 1px solid red;
+}
+/* pour mettre les deux boutons en ligne */
+form div.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15%;
+}
+
+#super-div div form input.submit-acc {
+    background-color:var(--btnVALIDColor);
+    color: var(--colorTXTFormulaire);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: 1px solid rgba(255, 255, 255, 0.705);
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40%;
+    
+}
+
+#super-div div form input.submit-acc:hover {
+    background-color: rgba(255, 255, 255, 0.705);
+    color: red;
+    border: 1px solid red;
+}
+
+/* #endregion BOUTON */
+#centerForm{
+    text-align: center;
+}
+span + span {
+    margin-top: 10px;
+}
+/*--------------------------------------------------------------------*/
+/*#region HEADER*/
+header{
+    background-color: transparent;/*rgba(36, 36, 36, 0.40);*/
+    /* on change la boite en boite flexible */
+    display: flex;
+    /* on mets l'axe principale horizontalement */
+    flex-direction: row;
+    /*espacement entre les éléments enfants */
+    justify-content:space-between;
+    align-items: center;                            /* alignement centré sur l'axe secondaire (horizontalement ici) */
+    height: 80px;                                   /* hauteur du header en px pour bloquer la taille */
+    padding-left: 1%;                               /* marge interne du header gauche et droit en % pour etre responsive */
+    padding-right: 1%;
+    padding-top: 2px;                               /* marge interne du header haut et bas en px pour bloquer */
+    padding-bottom: 2px;
+}
+header .logo{
+    height: 100%;
+}
+header #read{
+    opacity: 0;
+    cursor: pointer;
+}
+header #read:hover{
+    transition: opacity 2s;
+    opacity: 60%;
+}
+
+header.header nav ul li{
+    display: inline;
+    padding: 4px 4px;
+    font-size: 1.5rem;
+}
+header.header nav ul li a:hover{
+    color:var(--colorTXT);
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+header.header nav ul li a:active{
+    color:black;
+    background: linear-gradient(red white red);
+}
+
+header.header.fix{
+    position: fixed;                                              /* pour fixer le header à l'écran */
+    top: 0px;
+    background-color: rgba(60, 59, 59, 0.501);                  /* a tester */
+    width: 100%;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.391), 0 15px 25px 0 rgba(214, 71, 71, 0.24);
+}
+#nav-mobile{
+    display: none;
+}
+
+/*#endregion HEADER*/
+
+/*#region FORMULAIRE*/
+form.grid-container{
+    display: flex;
+    position: relative;   /* test relative */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* width: 100%; */
+    
+}
+.form{
+    width: 100%;
+    height: 60%;/*-----*/
+    padding: 10%;
+    border: 1px solid rgba(255, 255, 255,0.5);
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.404);
+    box-shadow: 0 0 10px rgba(0, 0, 0,0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.grid-container .formulaire{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.grid-container .formulaire .info{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 5%;
+    margin: 7%;
+    color: var(--colorTXTFormulaire);
+    
+    
+}
+form.grid-container div.btn.col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    margin-top: 5%;
+}
+#submit{
+    background-color:rgba(0, 102, 255, 0.500);
+}
+form.grid-container div.btn.col input[type = submit], 
+form.grid-container div.btn.col input[type = reset] {
+    width: 50%;
+    margin: 0 10px;
+}
+
+input::placeholder,
+select{
+    color: var(--colorTXTFormulaire);
+    font-size: 1.1rem;
+}
+option{
+    background-color: rgba(80, 6, 6, 0.282);
+}
+
+form.grid-container label{
+    background-color:rgba(255, 0, 0, 0.301);
+    padding: 1% 1%;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+#iconImport:hover{
+    color: var(--LetterColor);
+    cursor:pointer;
+}
+
+span{
+    color: var(--colorTXTFormulaire);
+    background-color: rgba(0, 0, 0, 0.315);
+    box-shadow: 0 0 20px rgba(0, 0, 0,0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#filter-dark::before{
+    z-index: -1;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.392);
+}
+
+
+/*#endregion FORMULAIRE*/
+
+
+
+
+#bl{
+    background-color: rgba(119, 110, 110, 0.529)
+}
+/*#region LISTE*/
+
+/* LIST DETAILS BOOK */
+ul.list-icon-left{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.list-icon-left > li{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    column-gap: 16px;
+}
+ul.list-icon-left > li > i{
+    color: var(--LetterColor);
+}
+ul.list-icon-left > li > strong{
+    font-weight: 200;
+}
+
+ul.list-icon-left > li > div{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    margin: 2px;
+    text-align: justify;
+    
+}
+div.list-style > ul{
+    list-style: none;
+    color: var(--colorTXT);
+    background-color: rgba(255, 0, 0, 0.296);  /* a sortir*/
+    text-align: start;
+}
+
+
+/*#endregion LISTE*/
+
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7% 0;
+}
+.section-img-texte-details{
+    width: 60%;
+}
+.section-content{
+    width: 50%;
+    background-color:rgba(208, 208, 208, 0.515);
+    box-shadow: 0 20px 50px rgba(0, 0, 0,0.2), 0 10px 15px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 15px;
+}
+.section-content.row{
+    display: flex;
+    flex-direction: row;
+}
+.book{
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.611);
+    padding: 4% 2%;
+    border-radius: 5px;
+}
+
+.container-img-child{
+    display: grid;
+    width: 500px;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.child{
+    text-align: center;
+}
+.child img{
+    background: linear-gradient(red white) ;
+    width: 60%;
+    
+    
+}
+
+
+
+/* #region IMAGES*/
+.wrapper-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wrapper-img img{
+    width: 100%;
+}
+div.book  img {
+    width: 60%;                 /**/
+    z-index: 1;
+}
+a img.display-link {
+    display: flex;
+    float: right;
+    margin-right: 2%;
+    width: 20%;
+    transition: background-color 1s ease;
+}
+a img.display-link:hover{
+    background-color:var(--bgColorOne_w);
+    border-radius: 5px;
+}
+footer.foot div img{
+    width: 70px;
+}
+footer.foot div.img-footer{
+    background-color: var(--bgColorOne_w);
+    border-radius: 20px;
+}
+footer.foot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+ 
+/* #endregion IMAGE */
+
+
+
+/* #region FOOTER */
+footer.foot{
+    width: 100%;
+    height: 80px;
+    /* background-color: yellow; */
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    /* margin-top: 10px; */
+    padding: 15px;
+    background-color: rgba(60, 59, 59, 0.501);                  /* a tester */
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.467), 0 15px 25px 0 rgba(214, 71, 71, 0.46); /*axe x - y - blur-radius - spread-radius*/
+
+}
+
+footer.foot a{
+    font-size: 1rem;
+    transition: font-size 0.8s ease;
+    
+}
+footer.foot a:hover{
+    font-size: 2rem;
+    color: var(--bgColorOne_w);
+}
+footer.foot div, footer.foot span{
+    box-shadow: inset 0 0 25px rgba(255, 0, 0, 0.467), 0 15px 25px 0 rgba(214, 71, 71, 0.46);
+    padding: 4px;
+    border-radius: 5px;
+}
+span::first-letter{ /* pseudo class prennant la premiere lettre */
+    color: var(--LetterColor);
+}
+/* #endregion FOOTER */
+
+
+/* #region MSG JS erreurs ... */
+span#checkValue{
+    border-radius: 5px;
+    box-shadow: inset 0 0 25px rgba(255, 0, 0, 0.467), 0 15px 25px 0 rgba(214, 71, 71, 0.46);
+}
+span#checkLegal{
+    border-radius: 5px;
+    box-shadow: inset 0 0 25px rgba(255, 0, 0, 0.467), 0 15px 25px 0 rgba(214, 71, 71, 0.46);
+}
+/* #endregion MSG JS erreurs ... */
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1280px) {
+    /* FORMULAIREs */
+    .grid-container .formulaire .info > span{
+        display: none;
+    }
+    .grid-container .formulaire .info{
+        row-gap: 5%;
+        margin-top: 10%;
+    }
+    form.grid-container div.btn.col{
+        margin-top: 11%;
+    }
+    .grid-books{
+        margin-bottom: 10rem;
+    }
+    .grid-books .book div.list-style{
+        font-size: 0.8rem;
+    }
+    form#line-form{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    form#line-form select{
+        padding: 2%;
+        margin: 1% 1%;
+    }
+    .filter-book{
+        width: 80%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* telephone */
+@media (orientation: portrait), (max-width: 740px){
+    #bg-body-CF{
+        display: none;
+    }
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        margin:  auto;
+        margin-top: 30%;            /* pour responsive ajouter un peu de marge*/
+    }
+    
+    .form{
+        width: 100%;
+        height: 60%;/*-----*/
+        padding: 10%;
+        border: 1px solid rgba(255, 255, 255,0.5);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 20px rgba(0, 0, 0,0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+    
+    .container h1{
+        width: 80%;
+        margin: 0 auto;
+        padding-bottom: 10%;
+        font-family: 'Cormorant Upright', serif;
+        font-style: italic;
+    }
+    
+    .font-h1{
+        font-family: var(--titleFont);
+        font-size: 3rem;
+        font-weight: lighter;
+        color: var(--colorH1);
+    }
+    h1 .letter-color{
+        color: var(--LetterColor);
+    }
+    .form h1{
+        text-align: center;
+    }
+    #super-div h1{
+        font-size: 2rem;
+    }
+    
+    input + input{
+        margin-bottom: 20%;
+    }
+    input[type = mail] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: none;
+        box-sizing: border-box;
+        background-color: rgba(254, 0, 0, 0.37);
+        border-radius: 5px;
+
+    }
+    
+    /* permet d'attrapper tous lesinput de type submit */
+    input[type = submit],[type = reset] {
+        background-color: rgba(255, 0, 0, 0.706);
+        color: var(--colorTXTFormulaire);
+        padding: 5% 5%;
+        margin: 8% 0;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 45%;
+        
+    }
+    
+    
+    
+    /* pour mettre les deux boutons en ligne */
+    /* form div {
+         margin-top: 10%; 
+    } */
+    
+    /*--------------------------------------------------------------------*/
+    header{
+        /* marge interne du header gauche et droit en % pour etre responsive */
+        padding-left: 4%;
+        padding-right: 4%;
+        /* marge interne du header haut et bas en px pour bloquer */
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+
+    #nav-screen{
+        display: none;
+    }
+    #nav-mobile{
+        display: inline;
+    }
+    /*---------------------------------------------------*/
+
+     /* Style navigation menu */
+    .topnav {
+        overflow: hidden;
+        background-color: rgba(51, 51, 51, 0.529);
+        position: relative;
+    }
+    
+    /* Masquage des liens dans le menu de navigation */
+    .topnav #myLinks {
+        display: none;
+    }
+    
+    /* Style navigation menu liens */
+    .topnav a {
+        color: white;
+        padding: 5px 5px;
+        /* text-decoration: none; */
+        font-size: 0.7rem;
+        display: block;
+    }
+    
+    /* Style hamburger menu */
+    .topnav a.icon {
+        /* background: rgba(0, 0, 0, 0); */
+        display: block;
+        position:static;
+        right: 0;
+        top: 0;
+        
+    }
+    
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover {
+        background-color: #ddd;
+        color:var(--LetterColor);
+        border-radius: 20px;
+    }
+    
+    /* Style the active link (or home/logo) */
+    .topnav a:active {
+        background-color: #0433aa9e;
+        color:var(--colorTXT);
+    } 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #read{
+        display: none;
+    }
+
+    .grid-container .formulaire{
+        flex-direction: column;
+        padding: 0 10%;
+    }
+
+    .grid-container .formulaire .info{
+        text-align:start;
+        row-gap: 1%;
+        margin: 5%;
+        font-size: 0.8rem;
+    }
+    form.grid-container label{
+        font-size: 0.8rem;
+    }
+    /* form#line-form{
+        flex-direction: column;
+        align-items: center;
+    } */
+    input::placeholder{
+    font-size: 0.9rem;
+    }
+
+    .section-content.row{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-content{
+        width: 90%;
+    }
+    .wrapper-img{
+        margin-top: 10px;
+    }
+    .container-img-child{
+        width: 95%;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .book{
+        padding: 4% 2%;
+        margin: 2% 0;
+        border-radius: 5px;
+        font-size: 0.7rem;
+
+    }
+    div.book > img{
+        width: 50%;
+    }
+
+    a img.display-link {
+        display: inline;
+        width: 20%;
+        
+    }
+
+    #super-div{
+        margin-top: 16%;
+    }
+    h4.title4{
+        font-size: 1.3rem;
+        border-radius: 5px;
+    }
+    .grid-books{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        max-width: 500px;
+        /* height: 100%; */
+        row-gap: 1%;
+        column-gap: 2%;
+        
+        padding: 0 1%;
+        margin-bottom: 5rem;
+    
+    }
+
+    footer.foot{
+       height: 70px;
+        padding: 15px;
+        background-color: rgba(60, 59, 59, 0.501);                  /* a tester */
+        box-shadow: 0 0 25px rgba(255, 0, 0, 0.467), 0 15px 25px 0 rgba(214, 71, 71, 0.46); /*axe x - y - blur-radius - spread-radius*/
+    
+        font-size: 0.6rem;
+    }
+
+}
